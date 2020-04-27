@@ -31,9 +31,9 @@ const MailChimp = (() => {
 
         $.ajax({
           url: s.formAction,
-          type: 'POST',
+          type: 'post',
           data: s.form.serialize(),
-          dataType: 'jsonp',
+          dataType: 'html',
           success: response => {
             if (response.result === 'error') {
               setTimeout(() => {
