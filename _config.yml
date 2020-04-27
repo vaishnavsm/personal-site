@@ -32,6 +32,10 @@ contact:
 contact_img: /assets/images/contact_us.jpg
 formcarry: https://formcarry.com/s/KjggTwzBL2gE
 
+# MailChimp settings
+mailchimp_action: https://gmail.us8.list-manage.com/subscribe/post?u=efe9d905ef3957d3a47927302&amp;id=ac710ba77b
+mailchimp_input: b_efe9d905ef3957d3a47927302_ac710ba77b
+
 # Author settings
 author:
   - name: Vaishnav S Menon
