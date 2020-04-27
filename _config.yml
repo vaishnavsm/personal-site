@@ -43,25 +43,41 @@ author:
 
 # Skills
 skills:
-  - name: Frontend
+  - name: Languages
     list:
-      - name: Test React
-        project: http://www.reactjs.com
-      - name: Angular
-        project: http://www.google.com
-      - name: JQuery
-      - name: Vue
+      - name: C/C++
+      - name: Python
+      - name: Javascript
+      - name: Java
+      - name: Kotlin
+      - name: SQL
   - name: Backend
     list:
       - name: Django
-        project: www.google.com
+      - name: Flask
+      - name: NodeJS
       - name: PHP
-      - name: Facebook
-  - name: Methodologies
+  - name: Frontend
     list:
-      - name: Kanban
-      - name: Agile
-      - name: Procrastination
+      - name: React
+      - name: Angular
+      - name: Flutter
+  - name: Architecture
+    list:
+      - name: NginX
+      - name: Gunicorn
+      - name: Redis
+      - name: RabbitMQ
+      - name: Varnish Cache
+  - name: Platforms
+    list:
+      - name: AWS
+      - name: Azure
+      - name: GCP
+  - name: Blockchain
+    list:
+      - name: R3 Corda
+      - name: Etherium
 
 # Pagination settings
 pagination:
