@@ -1,7 +1,17 @@
 <nav>
+  <style>
+    @media screen and (max-width: 800px){
+      .hidden_sm{
+        display: none;
+        visibility: hidden;
+      }
+    }
+    
+  </style>
   <ul class="header__list">
-    <li><a href="{{ '/' | prepend: site.baseurl }}">Stories</a></li>
-    <li><a href="{{ '/style-guide' | prepend: site.baseurl }}">Style Guide</a></li>
+    <li class="hidden_sm"><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
+    <li><a href="{{ '/tag/projects' | prepend: site.baseurl }}">Projects</a></li>
+    <li><a href="{{ '/tag/thoughts' | prepend: site.baseurl }}">Thoughts</a></li>
     <li><span class="popup__open">Contact</span></li>
   </ul>
 </nav>

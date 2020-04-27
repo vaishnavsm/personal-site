@@ -1,10 +1,31 @@
+<style>
+  .contact__mast ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  @media screen and (max-width: 800px){
+    .contact__mast ul {
+      flex-direction: column; 
+      justify-content: space-around;
+    }
+  }
+</style>
 <section class="contact popup">
   <div class="popup__close">
     <div class="popup__exit"></div>
   </div>
   <div class="contact__container popup__container">
     <div class="contact__img">
-      <figure class="absolute-bg" style="background-image: url({{ site.contact_img | prepend: site.baseurl }});"></figure>
+      <figure class="absolute-bg" style="background-image: url({{ site.contact_img | prepend: site.baseurl }});">
+      <div style="text-decorations: none; text-align: right; right: 0; bottom: 0; position: absolute; font-size: 10px;">
+
+        Photo by <strong><a style="text-decorations: none; color: black; "href="https://www.pexels.com/@scottwebb?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Scott Webb</a></strong> from Pexels
+      </div>
+</figure>
     </div>
     <div class="contact__content">
       <div class="contact__mast section-padding--half">
@@ -16,6 +37,20 @@
       <div class="section-padding--none">
         <hr class="sep"/>
       </div>
+
+      {% if site.contact %}
+        <div class="contact__mast section-padding--half">
+            <ul>
+              {% for contact in site.contact %}
+                <li><a style="color: #222222;" href="{{ contact['url'] }}" target="_blank">{{ contact['value'] }}</a></li>
+              {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section-padding--none">
+          <hr class="sep"/>
+        </div>
+      {% endif %}
 
       <div class="contact__form section-padding--half">
         <div class="grid-xlarge">

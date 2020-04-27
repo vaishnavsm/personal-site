@@ -1,15 +1,11 @@
 ---
 layout: default
 ---
+
+{% include header.html %}
+
 <div class="post">
   <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="post__header section-padding--double">
-      <div class="grid-small">
-        <h2 itemprop="name headline">{{ page.title }}</h2>
-
-        <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %b %Y" }}</time>
-      </div>
-    </div>
 
     {% if page.image %}
       <div class="post__img">
@@ -18,6 +14,14 @@ layout: default
         </div>
       </div>
     {% endif %}
+    
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline">{{ page.title }}</h2>
+
+        <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %b %Y" }}</time>
+      </div>
+    </div>
 
     <div class="post__content section-padding">
       <div class="grid">
@@ -42,7 +46,7 @@ layout: default
           {% for author in page.author %}
             {% assign authorDetails = site.author | where: "name", author %}
             {% if forloop.first == true %}
-              <span class="post__author">Posted by
+              <span class="post__author">by
             {% else %}
               <span class="post__author">&amp;
             {% endif %}
@@ -52,8 +56,6 @@ layout: default
         </div>
       </div>
     {% endif %}
-
-    {% include disqus.html %}
 
   </article>
 </div>

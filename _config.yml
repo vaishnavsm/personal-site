@@ -1,34 +1,36 @@
 # Site/SEO settings
-email: okay@samesies.io
+email: vaishnavsm@gmail.com
 baseurl: ""
 permalink: /:year/:month/:day/:title/
 google_analytics: 
 
-name: Thomas Vaeth
-title: The Barber Theme
+name: Vaishnav S Menon
+title: Vaishnav
 description: >
-  Barber is a blog theme for Jekyll built by Thomas Vaeth for Samesies using HTML, Sass, and JavaScript.
-url: http://barber.samesies.io
-twitter_username: thomasvaeth
+  A quick view into my work and passions.
+url: 
 default_img: /assets/images/seo.jpg
 social:
-  - name: twitter
-    url: https://twitter.com/thomasvaeth
-  - name: instagram
-    url: https://www.instagram.com/thomas.vaeth/
   - name: linkedin
-    url: https://www.linkedin.com/in/thomasvaeth/
+    url: https://www.linkedin.com/in/vaishnavsm/
   - name: github
-    url: https://github.com/samesies
+    url: https://github.com/vaishnavsm
   - name: codepen
-    url: https://codepen.io/thomasvaeth/
+    url: https://codepen.io/_vaishnavsm_
+  - name: instagram
+    url: https://www.instagram.com/_vaishnavsm_/
+
 
 # Contact settings
-contact_img: /assets/images/placeholder-28.jpg
-formcarry: https://formcarry.com/s/HkIo0nMb7
-
-# Disqus settings
-disqus: test-apkdzgmqhj
+contact:
+  - name: email
+    url: mailto://vaishnavsm@gmail.com
+    value: vaishnavsm@gmail.com
+  - name: phone
+    url: tel://9846741031
+    value: 9846741031
+contact_img: /assets/images/contact_us.jpg
+formcarry: https://formcarry.com/s/KjggTwzBL2gE
 
 # MailChimp settings
 mailchimp_action: https://samesies.us17.list-manage.com/subscribe/post-json?u=66ddf555dab480e6a8606430b&amp;id=89b3ee034f
@@ -36,15 +38,36 @@ mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
 
 # Author settings
 author:
-  - name: Thomas Vaeth
-    bio: Thomas Vaeth was born in New York, raised in Pennsylvania, and transplanted in Washington. He was a Web Developer at Urban Influence, but now he's a Software Engineer at Getty Images.
-    url: http://thomasvaeth.com
+  - name: Vaishnav S Menon
+    url: http://vaishnavsm.me
+
+# Skills
+skills:
+  - name: Frontend
+    list:
+      - name: React
+        project: http://www.reactjs.com
+      - name: Angular
+        project: http://www.google.com
+      - name: JQuery
+      - name: Vue
+  - name: Backend
+    list:
+      - name: Django
+        project: www.google.com
+      - name: PHP
+      - name: Facebook
+  - name: Methodologies
+    list:
+      - name: Kanban
+      - name: Agile
+      - name: Procrastination
 
 # Pagination settings
 pagination:
   enabled: true
   debug: false
-  per_page: 12
+  per_page: 30
   permalink: '/page/:num/'
   title: ':title'
   limit: 0
@@ -59,7 +82,7 @@ autopages:
   tags:
     layouts: 
       - 'tag.html'
-    title: 'The Barber Theme'
+    title: 'Vaishnav S Menon'
     permalink: '/tag/:tag'
     slugify:
       mode: raw
@@ -84,3 +107,4 @@ exclude:
   - package.json
   - README.md
   - vendor
+  - ignore
