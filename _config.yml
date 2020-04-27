@@ -45,7 +45,7 @@ author:
 skills:
   - name: Frontend
     list:
-      - name: React
+      - name: Test React
         project: http://www.reactjs.com
       - name: Angular
         project: http://www.google.com
