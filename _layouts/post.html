@@ -4,6 +4,7 @@ layout: default
 
 {% include header.html %}
 
+
 <div class="post">
   <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -20,6 +21,23 @@ layout: default
         <h2 itemprop="name headline">{{ page.title }}</h2>
 
         <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %b %Y" }}</time>
+        {% if  page.project %}
+          <div class="post__action">
+            {% if  page.project.live %}
+              <a class="form__btn post__btn" href="{{ page.project.live }}">Live Demo</a>
+            {% endif %}
+            {% if  page.project.source %}
+              <a class="form__btn post__btn" href="{{ page.project.source }}">Source</a>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% if  page.topics %}
+          <ul class="post__topics">
+            {% for topic in page.topics %}
+              <li class="post__topics__item">{{topic}}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
     </div>
 

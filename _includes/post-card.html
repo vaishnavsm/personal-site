@@ -10,4 +10,24 @@
       <p style="text-align: justify; font-size: 16px;"><span itemprop="description">{{ post.content | strip_html | truncatewords: 50, "" }}</span></p>
     </div>
   </a>
+  {% if post.project || post.topics %}
+    <div class="post__proj__sep"></div>
+  {% endif %}
+  {% if  post.project %}
+          <div class="post__action">
+            {% if  post.project.live %}
+              <a class="post__btn" href="{{ post.project.live }}">Live Demo</a>
+            {% endif %}
+            {% if  post.project.source %}
+              <a class="post__btn" href="{{ post.project.source }}">Source</a>
+            {% endif %}
+        </div>
+      {% endif %}
+      {% if  post.topics %}
+        <ul class="post__topics">
+          {% for topic in post.topics %}
+            <li class="post__topics__item">{{topic}}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
 </article>

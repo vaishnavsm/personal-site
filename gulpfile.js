@@ -75,7 +75,7 @@ function watch() {
   gulp.watch('./_assets/js/**/*.js', scripts);
 }
 
-const build = gulp.series(styles, scripts, watch);
+const build = gulp.series(styles, scripts);
 gulp.task('default', build);
 
 exports.lintStyles = lintStyles;
