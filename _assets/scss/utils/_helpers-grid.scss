@@ -28,10 +28,10 @@ section {
 }
 
 .section-padding--double {
-  padding: 4em 1em;
+  padding: 3em 1em;
 
   @media (min-width: $mq-small) {
-    padding: 6em 2em;
+    padding: 4em 2em;
   }
 
   @media (min-width: $mq-med) {
@@ -43,8 +43,8 @@ section {
 
   @media (min-width: $mq-xlarge) {
     padding: {
-      top: 8em;
-      bottom: 8em;
+      top: 7em;
+      bottom: 7em;
     }
   }
 }
