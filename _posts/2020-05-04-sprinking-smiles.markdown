@@ -8,11 +8,13 @@ author: Vaishnav
 tags:
   - Projects
   - Featured
-  - Thoughts
 topics:
   - React
   - GCP
+  - Firebase
   - Javascript
   - NodeJS
+project:
+  live: https://ssprinklingsmiless.web.app/
 ---
 

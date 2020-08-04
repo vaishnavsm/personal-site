@@ -1,18 +1,13 @@
 ---
 layout: post
-title: "Sprinkling Smiles: Bringing the world closer"
+title: "An Expedition To Chunar"
 date: 2020-05-02
 description: 
 image: /assets/posts/two-tombs/header.jpg
 author: Vaishnav
 tags:
-  - Featured
   - Thoughts
 topics:
-  - React
-  - GCP
-  - Javascript
-  - NodeJS
 ---
 
 # Chunar Fort

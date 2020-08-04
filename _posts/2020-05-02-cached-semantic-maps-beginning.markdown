@@ -7,6 +7,7 @@ image: /assets/posts/cached-semantic-maps.jpg
 author: Vaishnav
 tags:
   - Builds
+  - Featured
 topics:
   - C++
   - Data Structures
@@ -49,3 +50,102 @@ The steps now were simple. Think about the types of queries you'd need, categori
 
 ### What kind of queries are there?
 
+The entire point of this project was to make really extendible querying. To this end, we need to allow a general querying paradigm.
+
+Let's consider different kinds of entities which exist in this system: Balls, Players, Matches, and Teams.
+There are relations between them, and we can think of them as connections between them.
+
+Now, it should be clear that data is available at two levels: at each of these entities (Nodes), and at the edges between them. For example, a player may be 24 years old, and a match may be held on 29th February, 2019. However, the position of the player in the match can't be a property of either the match or the player. It is instead a property of the connection between them.
+
+We can take advantage of this structure to make our querying language.
+
+Let us consider a couple example queries:
+
+#### What is the age of a player named "Vaishnav" from the team "Kerala Karelas?"
+{
+  from: 'players', 
+  select: [
+    {
+      field: 'age'
+    }
+  ],
+  extends: [
+    {
+      query: {
+        from: 'teams',
+        select: [
+          {
+            field: 'name',
+            as: 'team_names'
+          }
+        ]
+      },
+      select: [
+        {
+          field: 'team_names',
+        }
+      ]
+    }
+  ],
+  where: [
+    {
+      field: 'name',
+      operation: 'equals',
+      value: 'vaishnav',
+    },
+    {
+      field: 'team',
+      operation: 'contains',
+      value: 'Kerala Karelas'
+    }
+  ]
+}
+
+#### What is the total runs of all players named "Vaishnav?"
+{
+  from: 'players', 
+  select: [
+    {
+      field: 'runs',
+      compute: 'sum',
+      as: 'sum_runs'
+    }
+  ],
+  extends: [
+    {
+      query: {
+        from: 'balls',
+      },
+      select: [
+        {
+          field: 'runs',
+        } 
+      ]
+    }
+  ],
+  where: [
+    {
+      field: 'name',
+      operation: 'equals',
+      value: 'vaishnav',
+    },
+  ]
+}
+
+Do remember that this syntax is completely made up!
+
+### The Query Structure
+
+From these examples, we get a simple query structure.
+Each query has 4 parts: select, from, extends, and where (inspired from SQL).
+* From simply contains the type of node we are trying to select. This is a string.
+* Where contains a list of fields of the form {field, operation, value}, which filters the limits which are selected
+* Select 'exposes' the values from all the available data to the layer before it (or to whoever called the engine).
+* Extends is where a majority of the functionality lies. It allows you to extend the query to other nodes. You do this by specifying the query in the query field (instead of a from field), and the select, from, and where operate on the connection between the two nodes.
+
+A couple notes:
+* Data exposed by extended fields are aggregated into an array, unless they are explicitly changed by a compute query.
+* All exposed fields are added to the available fields at the level just below it. Only fields explicitly exposed are shown to further layers. However, if there are fields of the same name in the list of names available at the node/connection level and in the list exposed from one layer up, we get undefined behaviour. This should be reported during compile time and disallowed!
+
+### Query Compilation
+Queries will have to be 'compiled' into a standard format. This is because we want, for example, queries different names but the same 'idea' to result in a cache hit! How this is to be done remains to be seen for now. Watch this space!
