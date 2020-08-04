@@ -46,8 +46,10 @@ skills:
   - name: Languages
     list:
       - name: C/C++
+        project: 'https://vaishnavsm.github.io/2020/05/02/cached-semantic-maps-beginning/'
       - name: Python
       - name: Javascript
+        project: 'https://vaishnavsm.github.io/2020/05/02/sprinking-smiles/'
       - name: Java
       - name: Kotlin
       - name: SQL
@@ -60,6 +62,7 @@ skills:
   - name: Frontend
     list:
       - name: React
+        project: 'https://vaishnavsm.github.io/2020/05/02/sprinking-smiles/'
       - name: Angular
       - name: Flutter
   - name: Architecture
