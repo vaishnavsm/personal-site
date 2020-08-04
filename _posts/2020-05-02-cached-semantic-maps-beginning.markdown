@@ -62,6 +62,7 @@ We can take advantage of this structure to make our querying language.
 Let us consider a couple example queries:
 
 #### What is the age of a player named "Vaishnav" from the team "Kerala Karelas?"
+```
 {
   from: 'players', 
   select: [
@@ -100,8 +101,10 @@ Let us consider a couple example queries:
     }
   ]
 }
+```
 
 #### What is the total runs of all players named "Vaishnav?"
+```
 {
   from: 'players', 
   select: [
@@ -131,6 +134,7 @@ Let us consider a couple example queries:
     },
   ]
 }
+```
 
 Do remember that this syntax is completely made up!
 
