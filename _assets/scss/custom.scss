@@ -2,6 +2,10 @@
 // Custom CSS
 //---------------------------------------------------------
 
+html {
+    scroll-behavior: smooth;
+}
+
 //----------------------------------------------
 // Post Search
 //----------------------------------------------
@@ -43,6 +47,7 @@
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     font-size: 36px;
@@ -95,7 +100,7 @@
 }
 
 .section-skills{
-    background: black;
+    background: $color-black;
     color: white;
 }
 
@@ -156,7 +161,8 @@
     }
 
     .calls-to-action .form__btn{
-        margin: 10px 25px;
+        padding: 7px 15px;
+        margin: 7px 25px;
     }
 
     .section-hero p{
@@ -289,5 +295,15 @@
     .contact__mast ul {
         flex-direction: column; 
         justify-content: space-around;
+    }
+}
+
+//----------------------------------------------
+// Contact
+//----------------------------------------------
+
+@media screen and (min-width: 800px){
+    .mini__only {
+        display: none !important;
     }
 }

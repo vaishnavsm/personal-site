@@ -1,4 +1,5 @@
 ---
+title: Home
 layout: frontpage
 pagination:
   enabled: true
@@ -27,6 +28,7 @@ pagination:
       <a href="/tag/projects" class="form__btn">Projects</a>
       <a href="/tag/builds" class="form__btn">Build Guides</a>
       <a href="/tag/thoughts" class="form__btn">Thoughts</a>
+      <a href="#skills" class="form__btn mini__only">Skills</a>
     </div>
     <div class="calls-to-action">
       <div class="form__btn contact-btn popup__open"><span><b>Get In Touch</b></span></div>
@@ -35,7 +37,7 @@ pagination:
 </section>
 
 {% if site.skills %}
-<section class="mast section-padding--half section-skills">
+<section id="skills" class="mast section-padding--half section-skills">
   <div class="grid">
     <h2>
       Skills
@@ -62,7 +64,7 @@ pagination:
 
 <div class="posts" id="featured">
   <div class="grid-xlarge">
-    <h1 style="text-align: center; color: #bcbcbc;">Featured Projects</h1>
+    <h2 style="text-align: center; color: #acacac;">Featured Projects</h2>
     <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
 
       {% for post in site.tags.Featured %}
