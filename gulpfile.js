@@ -10,6 +10,9 @@ const source = require('vinyl-source-stream');
 const stylelint = require('gulp-stylelint');
 const uglify = require('gulp-uglify');
 const zip = require('gulp-zip');
+const imageResize = require('gulp-image-resize');
+const parallel = require('concurrent-transform');
+const changed = require("gulp-changed");
 
 function lintStyles() {
   return gulp.src([
@@ -75,7 +78,23 @@ function watch() {
   gulp.watch('./_assets/js/**/*.js', scripts);
 }
 
-const build = gulp.series(styles, scripts);
+function images({height, suffix, quality}={height: 1440, quality: 0.9, suffix: 'full'}){
+  return function resize_image() {
+    return gulp.src([
+      './_assets/posts/**/*.{png,gif,jpg,jpeg,jfif}',
+    ])
+    .pipe(changed("./assets/posts"))
+    .pipe(parallel(imageResize({
+      height: height,
+      quality: quality,
+      cover: true,
+    })))
+    .pipe(rename((path)=>{if(!suffix) return; path.basename += '-'; path.basename += suffix;}))
+    .pipe(gulp.dest('./assets/posts'))
+  };
+}
+
+const build = gulp.parallel(styles, scripts, images({height: 1080, suffix: null, quality: 0.9}), images({height: 360, suffix: 'thumbnail', quality: 0.6}));
 gulp.task('default', build);
 
 exports.lintStyles = lintStyles;
