@@ -1,0 +1,74 @@
+<section class="contact popup">
+  <div class="popup__close">
+    <div class="popup__exit"></div>
+  </div>
+  <div class="contact__container popup__container">
+    <div class="contact__img">
+      <figure class="absolute-bg" style="background-image: url({{ site.contact_img | prepend: site.baseurl }});">
+      <div style="text-decorations: none; text-align: right; right: 0; bottom: 0; position: absolute; font-size: 10px;">
+
+        Photo by <strong><a style="text-decorations: none; color: black; "href="https://www.pexels.com/@scottwebb?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Scott Webb</a></strong> from Pexels
+      </div>
+</figure>
+    </div>
+    <div class="contact__content">
+      <div class="contact__mast section-padding--half">
+        <div class="grid">
+          <h2>Contact</h2>
+        </div>
+      </div>
+
+      <div class="section-padding--none">
+        <hr class="sep"/>
+      </div>
+
+      {% if site.contact %}
+        <div class="contact__mast section-padding--half">
+            <ul style="display: flex; flex-direction: column; align-items: stretch;">
+              {% for contact in site.contact %}
+                <li style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                  {% if contact['title'] %}
+                    <span style="padding-right: 10px; flex-grow: 1; text-align: left; flex-basis: 0;">
+                      {{ contact['title'] }}: 
+                    </span>
+                  {% endif %}
+                  <a style="color: #222222; flex-grow: 1; text-align: left; flex-basis: 0;" href="{{ contact['url'] }}" target="_blank">{{ contact['value'] }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section-padding--none">
+          <hr class="sep"/>
+        </div>
+      {% endif %}
+
+      <div class="contact__form section-padding--half">
+        <div class="grid-xlarge">
+          <p style="text-align: justify;">
+            <br />
+            I'm always available to discuss technical consulting projects, interesting tech, or other projects.
+            If you want to contact me for this, 
+            <a href="mailto://consulting@vaishnavsm.com" target="_blank" style="color: #555555">
+              emailing at consulting@vaishnavsm.com
+            </a>
+            is the best way to reach me. Do note that if you email me for other purposes on this id, your email id 
+            will automatically be filtered out thenceforth (wow)<br /> <br />
+            I'm always looking for feedback regarding anything I can improve. If you have pointers on how I can improve, please mail me at 
+            <a href="mailto://feedback@vaishnavsm.com" target="_blank" style="color: #555555">
+              emailing at feedback@vaishnavsm.com
+            </a>. Thanks!
+            <br /> <br />
+            If you just want to say hi, or just chat for funsies, hmu on 
+            <a href="https://www.instagram.com/_vaishnavsm_/" target="_blank" style="color: #555555">
+              instagram
+            </a>
+            . That's what I check when I'm free and in a conversing mood &#x1F680;.
+          </p>
+          <div id="form"></div> <!-- Internally popup uses #form workaround -->
+          <!-- {% include formcarry.html %} -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

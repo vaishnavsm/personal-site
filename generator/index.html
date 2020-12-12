@@ -1,0 +1,101 @@
+---
+title: Home
+layout: frontpage
+pagination:
+  enabled: true
+---
+<!-- The main content area -->
+
+<section class="mast section-padding--double section-hero">
+  <div class="grid">
+    <h2 class="mini__except">
+      Vaishnav S Menon
+    </h2>
+    <h2 class="mini__only">
+      Vaishnav
+    </h2>
+    <p class="mini__except">
+      I am a developer, an orator, and an entrepreneur.<br />
+      I love biking and looking into the horizon.
+    </p>
+    <p class="mini__only">
+      I am a developer, an orator,<br /> and an entrepreneur.<br />
+      I love looking into the horizon.<br /><br />
+    </p>
+    <p>
+      {% if site.social %}
+        <ul class="mast__social">
+          {% for social in site.social %}
+            <li><a href="{{ social['url'] }}" target="_blank"><i class="fab fa-{{ social['name'] }}"></i></a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </p>
+    <div class="calls-to-action margin">
+      <div class="form__btn contact-btn popup__open"><span><b>Get In Touch</b></span></div>
+    </div>
+    <div class="calls-to-action">
+      <a href="#featured" class="form__btn mini__only">Featured Projects</a>
+      <a href="/tag/projects" class="form__btn">Projects</a>
+      <a href="/tag/entrepreneurship" class="form__btn">Entrepreneurship</a>
+      <a href="/tag/thoughts" class="form__btn">Thoughts</a>
+    </div>
+    <div class="calls-to-action">
+      <a href="/posts" class="form__btn">All Posts</a>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="mast section-padding--half section-skills">
+  <div class="grid">
+    <h3>
+      Have Fun and Keep Learning :)
+    </h3>
+    <!-- {% comment %} <a href="#featured" class="form__btn btn-inverted">Featured Projects</a>
+      <div class="skill_type_list">
+        {% for skill_type in site.skills %}
+          <div class="skill_box">
+            <h2>
+              {{skill_type.name}}
+              <div class="sep"></div>
+            </h2>
+            <ul class="skills_list">
+              {% for skill in skill_type.list %}
+                <li><span class="skill">{{skill.name}}</span>{% if skill.project %}&nbsp;<span class="project">(<a href="{{skill.project}}" aria-label="Project Link">Project</a>)<span>{% endif %}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div> {% endcomment %} -->
+    </div>
+  </section>
+
+<div class="posts" id="featured">
+  <div class="grid-xlarge">
+    <h2 style="text-align: center;">Featured</h2>
+    <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
+
+      {% for post in site.tags.Featured %}
+        
+        <!-- The tag below includes the markup for each post - partials/post-card.html -->
+        {% include post-card.html %}
+
+      {% endfor %}
+    </div>
+  </div>
+
+  {% include pagination.html %}
+</div>
+
+<div class="posts">
+  <div class="grid-xlarge">
+    <h2 style="text-align: center;">Latest</h2>
+    <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
+      {% for post in paginator.posts %}
+        <!-- The tag below includes the markup for each post - partials/post-card.html -->
+        {% include post-card.html %}
+
+      {% endfor %}
+    </div>
+  </div>
+</div>

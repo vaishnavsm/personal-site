@@ -1,0 +1,37 @@
+<nav>
+  <ul class="header__list">
+    <li class="hidden_sm"><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
+    <li><a href="{{ '/posts' | prepend: site.baseurl }}">All Posts</a></li>
+    <li class="mini__only"><a id="header__tags" href="#" >Tags</a></li>
+    <li class="hidden_sm"><a href="{{ '/tag/projects' | prepend: site.baseurl }}">Projects</a></li>
+    <li class="hidden_sm"><a href="{{ '/tag/entrepreneurship' | prepend: site.baseurl }}">Entrepreneurship</a></li>
+    <li class="hidden_sm"><a href="{{ '/tag/thoughts' | prepend: site.baseurl }}">Thoughts</a></li>
+    <li><span class="popup__open">Contact</span></li>
+  </ul>
+  <ul id="header__menu" class="header__menu mini__only hidden">
+    <li><a href="{{ '/tag/projects' | prepend: site.baseurl }}">Projects</a></li>
+    <li><a href="{{ '/tag/entrepreneurship' | prepend: site.baseurl }}">Entrepreneurship</a></li>
+    <li><a href="{{ '/tag/thoughts' | prepend: site.baseurl }}">Thoughts</a></li>
+  </ul>
+</nav>
+
+<script>
+  var onTagClick = (e)=>{
+  
+    e.preventDefault();
+    if(document.getElementById("header__menu").classList.contains('hidden')){
+      document.getElementById("header__menu").classList.remove('hidden');
+    }
+    else {
+      document.getElementById("header__menu").classList.add('hidden')
+    }
+
+    // Debounce
+    document.getElementById('header__tags').onclick = null;
+    setTimeout(()=>{
+      document.getElementById('header__tags').onclick = onTagClick;
+    }, 100);
+  };
+
+  document.getElementById('header__tags').onclick = onTagClick;
+</script>

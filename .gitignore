@@ -8,3 +8,7 @@ _site
 .jekyll-metadata
 
 ignore/
+
+.vscode
+# Local Netlify folder
+.netlify

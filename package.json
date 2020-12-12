@@ -1,24 +1,22 @@
 {
-  "name": "barber-jekyll",
-  "description": "Barber is a blog theme for Jekyll built by Thomas Vaeth at Samesies using HTML, Sass, and JavaScript.",
-  "demo": "http://barber.samesies.io",
   "version": "1.0.0",
   "scripts": {
-    "start": "gulp && bundle exec jekyll serve",
-    "build": "gulp && bundle exec jekyll build",
-    "deploy": "gulp build && bundle exec jekyll build && s3-website deploy _site",
-    "gulp": "gulp"
+    "start": "bundle exec jekyll serve -s ./generator",
+    "start-gulp": "gulp dev",
+    "build": "gulp build && bundle exec jekyll build -s ./generator -d ./dist",
+    "rebuild": "gulp rebuild && bundle exec jekyll build -s ./generator -d ./dist",
+    "deploy": "bash ./scripts/publish.sh",
+    "clean": "gulp clean"
   },
   "author": {
-    "name": "Samesies",
-    "email": "okay@samesies.io",
-    "url": "http://samesies.io"
+    "name": "Vaishnav",
+    "email": "me@vaishnavsm.com",
+    "url": "http://vaishnavsm.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/samesies/barber-jekyll.git"
+    "url": "https://github.com/vaishnavsm/personal-site.git"
   },
-  "bugs": "https://github.com/samesies/barber-jekyll/issues",
   "keywords": [
     "barber",
     "jekyll",
@@ -27,6 +25,8 @@
   ],
   "dependencies": {
     "aos": "^2.3.4",
+    "gulp-clean": "^0.4.0",
+    "gulp-ignore": "^3.0.0",
     "jquery": "^3.4.1",
     "salvattore": "^1.0.9"
   },
