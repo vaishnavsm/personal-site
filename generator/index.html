@@ -35,7 +35,6 @@ pagination:
       <div class="form__btn contact-btn popup__open"><span><b>Get In Touch</b></span></div>
     </div>
     <div class="calls-to-action">
-      <a href="#featured" class="form__btn mini__only">Featured Projects</a>
       <a href="/tag/projects" class="form__btn">Projects</a>
       <a href="/tag/entrepreneurship" class="form__btn">Entrepreneurship</a>
       <a href="/tag/thoughts" class="form__btn">Thoughts</a>
@@ -51,45 +50,11 @@ pagination:
     <h3>
       Have Fun and Keep Learning :)
     </h3>
-    <!-- {% comment %} <a href="#featured" class="form__btn btn-inverted">Featured Projects</a>
-      <div class="skill_type_list">
-        {% for skill_type in site.skills %}
-          <div class="skill_box">
-            <h2>
-              {{skill_type.name}}
-              <div class="sep"></div>
-            </h2>
-            <ul class="skills_list">
-              {% for skill in skill_type.list %}
-                <li><span class="skill">{{skill.name}}</span>{% if skill.project %}&nbsp;<span class="project">(<a href="{{skill.project}}" aria-label="Project Link">Project</a>)<span>{% endif %}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endfor %}
-      </div> {% endcomment %} -->
     </div>
   </section>
 
-<div class="posts" id="featured">
-  <div class="grid-xlarge">
-    <h2 style="text-align: center;">Featured</h2>
-    <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
-
-      {% for post in site.tags.Featured %}
-        
-        <!-- The tag below includes the markup for each post - partials/post-card.html -->
-        {% include post-card.html %}
-
-      {% endfor %}
-    </div>
-  </div>
-
-  {% include pagination.html %}
-</div>
-
 <div class="posts">
   <div class="grid-xlarge">
-    <h2 style="text-align: center;">Latest</h2>
     <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
       {% for post in paginator.posts %}
         <!-- The tag below includes the markup for each post - partials/post-card.html -->

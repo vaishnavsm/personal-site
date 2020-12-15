@@ -24,7 +24,7 @@
 
       {% if site.contact %}
         <div class="contact__mast section-padding--half">
-            <ul style="display: flex; flex-direction: column; align-items: stretch;">
+            <ul class="contact__details">
               {% for contact in site.contact %}
                 <li style="display: flex; justify-content: space-between; flex-wrap: wrap;">
                   {% if contact['title'] %}

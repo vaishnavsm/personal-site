@@ -7,7 +7,6 @@ image: /assets/posts/cached-semantic-maps/cached-semantic-maps.jpg
 author: Vaishnav
 tags:
   - Projects
-  - Featured
 topics:
   - C++
   - Data Structures

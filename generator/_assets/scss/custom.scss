@@ -321,3 +321,17 @@ html {
     }
 
 }
+
+.contact__mast ul.contact__details {
+    display: flex; 
+    flex-direction: column; 
+    align-items: stretch;
+}
+
+@media screen and (min-width: 800px){
+    .contact__mast ul.contact__details {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+}
+
